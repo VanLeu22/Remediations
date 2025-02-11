@@ -25,7 +25,7 @@
     PS C:\> .\WN10-AU-000500.ps1 
 #>
 
-# YOUR CODE GOES HERE
+
 
 # Ensure you're running PowerShell with administrative privileges
 
