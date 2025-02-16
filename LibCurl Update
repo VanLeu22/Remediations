@@ -1,28 +1,65 @@
 <#
 .SYNOPSIS
-    This PowerShell script ensures that any the maximum size of the Windows Application event log is at least 32768 KB (32 MB).
+    This PowerShell script ensures that any version of libcurl gets updated to the latest version. (currently 8.9.1)
 
 .NOTES
     Author          : Simon VanLeuven
     LinkedIn        : linkedin.com/in/simon-vanleuven/
     GitHub          : github.com/vanleu22
-    Date Created    : 2024-09-09
-    Last Modified   : 2024-09-09
+    Date Created    : 2025-02-04
+    Last Modified   : 2025-02-04
     Version         : 1.0
     CVEs            : N/A
     Plugin IDs      : N/A
-    STIG-ID         : WN10-AU-000500
+    STIG-ID         : N/A
 
 .TESTED ON
-    Date(s) Tested  : 
-    Tested By       : 
-    Systems Tested  : 
-    PowerShell Ver. : 
+    Date(s) Tested  : 2025-02-04
+    Tested By       : Simon VanLeuven
+    Systems Tested  : Linux
+    PowerShell Ver. : 5.1.22621.4391
 
 .USAGE
-    Put any usage instructions here.
+    Create Nano update_curl.sh 
+    copy/paste the below script and save
+    
     Example syntax:
-    PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
+    PS C:\> chmod +x update_curl.sh    
+    PS C:\> ./update_curl.sh
 #>
 
 # YOUR CODE GOES HERE
+
+#!/bin/bash
+
+# Ensure the package list is updated
+sudo apt update
+
+# Remove the old version of libcurl (if necessary)
+sudo apt remove libcurl3 -y
+
+# Set the latest version of curl
+latestCurlVersion="8.9.1"
+downloadUrl="https://curl.se/download/curl-$latestCurlVersion.tar.gz"
+downloadPath="/tmp/curl-$latestCurlVersion.tar.gz"
+
+# Download the latest version of curl
+wget -O $downloadPath $downloadUrl
+
+# Extract the downloaded file
+extractPath="/tmp/curl-$latestCurlVersion"
+tar -xzvf $downloadPath -C /tmp
+
+# Navigate to the extracted directory
+cd $extractPath
+
+# Configure, compile, and install
+./configure --prefix=/usr/local --with-ssl
+make
+sudo make install
+
+# Update the dynamic linker run-time bindings
+sudo ldconfig
+
+# Verify the installation
+curl --version
