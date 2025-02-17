@@ -16,7 +16,7 @@
 .TESTED ON
     Date(s) Tested  : 2025-02-04
     Tested By       : Simon VanLeuven
-    Systems Tested  : Linux
+    Systems Tested  : Linux (ubuntu 22.04)
     PowerShell Ver. : N/A
 .USAGE
     Create Nano update_curl.sh 
