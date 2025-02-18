@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    This PowerShell script ensures that all local user accounts have passwords set to expire.
+    This PowerShell script modifies registry settings for password expiration and ensures that all local user accounts have passwords set to expire.
 
 .NOTES
     Author          : Simon VanLeuven
@@ -20,13 +20,9 @@
     PowerShell Ver. : 
 
 .USAGE
-    Put any usage instructions here.
-    Example syntax:
-    PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
-#>
-
-# Script to ensure all local user accounts have passwords set to expire
+ 
 # Note: This script must be run with administrative privileges
+>
 
 # Import the ADSI module for better control over user account settings
 Import-Module ActiveDirectory
