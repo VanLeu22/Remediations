@@ -1,4 +1,4 @@
-# This script downloads and configures the MSS-Legacy templates for IP Source Routing protection on Windows 10 systems.
+ # This script downloads and configures the MSS-Legacy templates for IP Source Routing protection on Windows 10 systems.
 
 # Define paths for the ADMX and ADML files
 $admxPath = "C:\Windows\PolicyDefinitions\MSS-Legacy.admx"
