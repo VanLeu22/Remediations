@@ -22,7 +22,7 @@
 .USAGE
  
 # Note: This script must be run with administrative privileges
->
+#>
 
 # Import the ADSI module for better control over user account settings
 Import-Module ActiveDirectory
