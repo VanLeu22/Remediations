@@ -1,4 +1,26 @@
-# Script to permanently disable the Guest account
+<#
+.SYNOPSIS
+    This PowerShell script ensures that the guest account is disabled.
+
+.NOTES
+    Author          : Simon VanLeuven
+    LinkedIn        : linkedin.com/in/simon-vanleuven/
+    GitHub          : github.com/vanleu22
+    Date Created    : 2025-02-18
+    Last Modified   : 2025-02-18
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-SO-000010
+
+.TESTED ON
+    Date(s) Tested  : 2025-02-18
+    Tested By       : Simon VanLeuven
+    Systems Tested  : Windows 10 Pro
+    PowerShell Ver. : 
+
+.USAGE
+   #>
 
 # Get the Guest user account
 $guestAccount = Get-WmiObject -Class Win32_UserAccount -Filter "Name='Guest' AND LocalAccount=True"
