@@ -1,3 +1,30 @@
+<#
+.SYNOPSIS
+    This PowerShell script ensures that all local user accounts have passwords set to expire.
+
+.NOTES
+    Author          : Simon VanLeuven
+    LinkedIn        : linkedin.com/in/simon-vanleuven/
+    GitHub          : github.com/vanleu22
+    Date Created    : 2025-02-18
+    Last Modified   : 2025-02-18
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-00-000090
+
+.TESTED ON
+    Date(s) Tested  : 2025-02-18
+    Tested By       : Simon VanLeuven
+    Systems Tested  : Windows 10 Pro
+    PowerShell Ver. : 
+
+.USAGE
+    Put any usage instructions here.
+    Example syntax:
+    PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
+#>
+
 # Script to ensure all local user accounts have passwords set to expire
 # Note: This script must be run with administrative privileges
 
